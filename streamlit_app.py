@@ -62,7 +62,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 if st.session_state.page == "Home":
     st.title("🏠 Home Page")
     st.write("Welcome to the homepage of your Streamlit website.")
-    st.image("https://source.unsplash.com/800x300/?home,nature", use_column_width=True)
+    st.image("https://plus.unsplash.com/premium_photo-1668017178993-4c8fc9f59872?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", use_container_width=True)
 
 elif st.session_state.page == "About":
     st.title("ℹ️ About Us")
