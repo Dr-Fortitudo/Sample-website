@@ -1,14 +1,48 @@
 import streamlit as st
 
-# Page config
-st.set_page_config(page_title="My Streamlit Website", layout="wide")
+st.set_page_config(
+    page_title="My Streamlit Website",
+    layout="wide",
+    page_icon="🌐",
+)
 
-# Initialize session state
+st.title("🌐 Welcome to My Website")
+st.write("Use the buttons to navigate to different pages: Home, About, and Contact.")
+
+# CSS styling for top navigation bar
+st.markdown("""
+    <style>
+    .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        background-color: #f0f2f6;
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        font-size: 18px;
+    }
+    .navbar button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        color: #31333f;
+    }
+    .navbar button:hover {
+        background-color: #d0d3d8;
+        border-radius: 8px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Sidebar for consistent layout
+st.sidebar.title("Navigation")
+
+# Use session state to track active page
 if "page" not in st.session_state:
     st.session_state.page = "Home"
-
-# --- Top Navigation Bar ---
-st.markdown("## 🌐 My Streamlit Website")
 
 nav1, nav2, nav3 = st.columns([1, 1, 1])
 with nav1:
@@ -23,19 +57,21 @@ with nav3:
 
 st.markdown("---")
 
-# --- Page Content Based on Navigation ---
+# Page content rendering
 if st.session_state.page == "Home":
-    st.header("🏠 Home")
+    st.title("🏠 Home Page")
     st.write("Welcome to the homepage of your Streamlit website.")
-    st.image("https://source.unsplash.com/800x300/?technology", use_column_width=True)
+    st.image("https://plus.unsplash.com/premium_photo-1668017178993-4c8fc9f59872?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", use_container_width=True)
 
 elif st.session_state.page == "About":
-    st.header("ℹ️ About")
-    st.write("We are building a modular multi-page Streamlit website with a clean navigation system.")
+    st.title("ℹ️ About Us")
+    st.write("We are building a multi-page website in Streamlit using a custom navbar.")
+    st.success("This approach allows a more web-like experience in Streamlit!")
 
 elif st.session_state.page == "Contact":
-    st.header("📞 Contact")
+    st.title("📞 Contact Us")
+    st.write("Feel free to reach out!")
     name = st.text_input("Your Name")
-    message = st.text_area("Your Message")
+    msg = st.text_area("Your Message")
     if st.button("Send"):
-        st.success(f"Thank you {name}, your message has been sent!")
+        st.success(f"Thanks {name}, your message has been sent!")
