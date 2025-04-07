@@ -30,9 +30,9 @@ st.markdown("---")
 
 # Page content rendering
 if st.session_state.page == "Home":
-    home.app()
+    Home.app()
 elif st.session_state.page == "About":
-    about.app()
+    About.app()
 
 elif st.session_state.page == "Contact":
     st.title("📞 Contact Us")
