@@ -9,37 +9,6 @@ st.set_page_config(
 st.title("🌐 Welcome to My Website")
 st.write("Use the buttons to navigate to different pages: Home, About, and Contact.")
 
-# CSS styling for top navigation bar
-st.markdown("""
-    <style>
-    .navbar {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        font-size: 18px;
-    }
-    .navbar button {
-        border: none;
-        background: none;
-        cursor: pointer;
-        font-weight: bold;
-        padding: 0.5rem 1rem;
-        color: #31333f;
-    }
-    .navbar button:hover {
-        background-color: #d0d3d8;
-        border-radius: 8px;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Sidebar for consistent layout
-st.sidebar.title("Navigation")
-
 # Use session state to track active page
 if "page" not in st.session_state:
     st.session_state.page = "Home"
