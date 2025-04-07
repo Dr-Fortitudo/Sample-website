@@ -1,6 +1,6 @@
 import streamlit as st
-import Home
-import About
+import home
+import about
 
 st.set_page_config(
     page_title="My Streamlit Website",
