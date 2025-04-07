@@ -1,4 +1,6 @@
 import streamlit as st
+import Home
+import About
 
 st.set_page_config(
     page_title="My Streamlit Website",
@@ -28,14 +30,9 @@ st.markdown("---")
 
 # Page content rendering
 if st.session_state.page == "Home":
-    st.title("🏠 Home Page")
-    st.write("Welcome to the homepage of your Streamlit website.")
-    st.image("https://plus.unsplash.com/premium_photo-1668017178993-4c8fc9f59872?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", use_container_width=True)
-
+    Home.app()
 elif st.session_state.page == "About":
-    st.title("ℹ️ About Us")
-    st.write("We are building a multi-page website in Streamlit using a custom navbar.")
-    st.success("This approach allows a more web-like experience in Streamlit!")
+    About.app()
 
 elif st.session_state.page == "Contact":
     st.title("📞 Contact Us")
